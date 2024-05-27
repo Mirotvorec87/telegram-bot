@@ -1,10 +1,14 @@
+# Exported from Render on 2024-05-27T18:29:11Z
 services:
-  - type: web
-    name: telegram-bot
-    env: python
-    region: frankfurt
-    buildCommand: ""
-    startCommand: "python bot.py"
-    envVars:
-      - key: BOT_TOKEN
-        value: ${BOT_TOKEN}
+- type: web
+  name: desktop-tutorial
+  runtime: python
+  repo: https://github.com/Mirotvorec87/desktop-tutorial
+  plan: free
+  envVars:
+  - key: BOT_TOKEN
+    sync: false
+  region: frankfurt
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn your_application.wsgi
+version: "1"
