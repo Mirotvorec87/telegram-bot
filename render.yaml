@@ -9,4 +9,4 @@ services:
         sync: false
     region: frankfurt
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn bot:application
+    startCommand: python bot.py
